@@ -1,0 +1,330 @@
+/* ------------------------------
+   RESET（最低限のリセット）
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background: #fff;
+}
+
+/* 共通コンテナ */
+.container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+}
+
+.logo-main {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo-sub {
+  font-size: 12px;
+  color: #777;
+}
+
+.site-nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.nav-cta {
+  padding: 6px 14px;
+  background: #00306d;
+  color: #fff !important;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+.hero {
+  padding: 70px 0;
+  background: #f6f8fb;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-label {
+  font-size: 14px;
+  color: #00306d;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-size: 32px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.hero-title span {
+  color: #00306d;
+  font-weight: 700;
+}
+
+.hero-lead {
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.hero-note {
+  margin: 14px 0 24px;
+  font-weight: bold;
+  color: #00306d;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.hero-image img {
+  width: 450px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ------------------------------
+   BUTTONS
+------------------------------ */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: #00306d;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #00224e;
+}
+
+.btn-outline {
+  border: 2px solid #00306d;
+  color: #00306d;
+}
+
+.btn-outline:hover {
+  background: #00306d;
+  color: #fff;
+}
+
+.btn-lg {
+  padding: 16px 28px;
+  font-size: 18px;
+}
+
+/* ------------------------------
+   SECTION 共通
+------------------------------ */
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title span {
+  color: #00306d;
+  font-weight: 700;
+}
+
+/* ------------------------------
+   ABOUT（担当者紹介）
+------------------------------ */
+.about-inner {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+}
+
+.about-name {
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+/* ------------------------------
+   STRENGTHS（選ばれる理由）
+------------------------------ */
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.strength-card {
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.strength-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #00306d;
+}
+
+/* ------------------------------
+   FLOW（売却の流れ）
+------------------------------ */
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.flow-step {
+  padding: 24px;
+  border-left: 5px solid #00306d;
+  background: #f8f9fc;
+  border-radius: 6px;
+}
+
+.flow-number {
+  font-size: 14px;
+  color: #00306d;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ------------------------------
+   FAQ
+------------------------------ */
+.faq-item {
+  margin-bottom: 28px;
+}
+
+.faq-question {
+  font-size: 18px;
+  color: #00306d;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.faq-answer {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ------------------------------
+   FINAL CTA
+------------------------------ */
+.final-cta {
+  background: #00306d;
+  color: #fff;
+  text-align: center;
+}
+
+.final-cta-inner {
+  padding: 50px 0;
+}
+
+.final-cta-text {
+  margin: 20px 0 28px;
+  font-size: 16px;
+}
+
+.final-cta .btn-primary {
+  background: #fff;
+  color: #00306d;
+}
+
+.final-cta .btn-primary:hover {
+  background: #e6e6e6;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+.site-footer {
+  background: #111;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-copy {
+  font-size: 13px;
+}
+
+/* ------------------------------
+   RESPONSIVE（スマホ対応）
+------------------------------ */
+@media (max-width: 800px) {
+  .hero-inner,
+  .about-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 100%;
+  }
+
+  .strengths-grid,
+  .flow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
