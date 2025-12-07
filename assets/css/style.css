@@ -67,23 +67,40 @@ body {
    HERO SECTION
 ------------------------------ */
 .hero {
-  padding: 70px 0;
-  background: #f6f8fb;
+  position: relative;
+  padding: 90px 0;
+  color: #fff;
+  background: url("../img/hero.webp") center center / cover no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.1)
+  );
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 40px;
 }
 
 .hero-text {
-  flex: 1;
+  max-width: 620px;
 }
 
 .hero-label {
   font-size: 14px;
-  color: #00306d;
+  color: #cfe5ff;
   font-weight: bold;
   margin-bottom: 12px;
 }
@@ -92,29 +109,49 @@ body {
   font-size: 32px;
   line-height: 1.5;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .hero-title span {
-  color: #00306d;
+  color: #ffd75e;
   font-weight: 700;
 }
 
 .hero-lead {
   margin-bottom: 16px;
-  color: #444;
+  color: #f5f7fb;
 }
 
 .hero-note {
   margin: 14px 0 24px;
   font-weight: bold;
-  color: #00306d;
+  color: #ffeb9c;
+}
+
+.hero-note span {
+  color: #ffeb9c;
 }
 
 .hero-actions {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
+.hero .btn-outline {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+}
+
+.hero .btn-outline:hover {
+  background: #00306d;
+  color: #ffffff;
+  border-color: #00306d;
+}
+
+/* hero-imageは背景画像に変更したため未使用だが、
+   将来使う可能性もあるので一旦残しておく */
 .hero-image img {
   width: 450px;
   border-radius: 8px;
@@ -161,7 +198,7 @@ body {
    SECTION 共通
 ------------------------------ */
 .section {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .section-title {
@@ -223,6 +260,76 @@ body {
 }
 
 /* ------------------------------
+   VOICES（お客様の声）
+------------------------------ */
+.voices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.voice-card {
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  position: relative;
+}
+
+.voice-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #f8f9fc;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #00306d;
+  font-weight: 600;
+}
+
+.voice-badge-icon {
+  font-size: 16px;
+}
+
+.voice-rating {
+  font-size: 18px;
+  color: #ffa500;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.voice-text {
+  margin-bottom: 16px;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.voice-author {
+  font-size: 13px;
+  color: #777;
+  font-style: italic;
+}
+
+.voices-link {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #666;
+}
+
+.voices-link a {
+  color: #00306d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.voices-link a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------
    FLOW（売却の流れ）
 ------------------------------ */
 .flow-grid {
@@ -243,6 +350,306 @@ body {
   color: #00306d;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+/* ------------------------------
+   WORKS（過去の担当物件）
+------------------------------ */
+.works-swiper {
+  padding: 40px 0 60px;
+  width: 100%;
+}
+
+.works-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  max-width: 800px;
+}
+
+@media (min-width: 768px) {
+  .works-swiper .swiper-slide {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .works-swiper .swiper-slide {
+    width: 65%;
+  }
+}
+
+.work-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.work-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 隣のスライドを少し縮小・薄暗く */
+.works-swiper .swiper-slide:not(.swiper-slide-active) .work-card {
+  opacity: 0.6;
+  transform: scale(0.9);
+}
+
+.works-swiper .swiper-slide-active .work-card {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.work-content {
+  padding: 24px;
+}
+
+.work-title {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #00306d;
+  font-weight: bold;
+}
+
+.work-meta {
+  font-size: 15px;
+  color: #666;
+}
+
+/* Swiperナビゲーションボタン */
+.works-swiper .swiper-button-next,
+.works-swiper .swiper-button-prev {
+  color: #00306d;
+  background: #ffffff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.works-swiper .swiper-button-next:hover,
+.works-swiper .swiper-button-prev:hover {
+  background: #00306d;
+  color: #ffffff;
+}
+
+.works-swiper .swiper-button-next::after,
+.works-swiper .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Swiperページネーション */
+.works-swiper .swiper-pagination-bullet {
+  background: #00306d;
+  opacity: 0.3;
+  width: 12px;
+  height: 12px;
+}
+
+.works-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .work-card img {
+    height: 350px;
+  }
+
+  .work-title {
+    font-size: 20px;
+  }
+
+  .works-swiper {
+    padding: 30px 0 50px;
+  }
+
+  .works-swiper .swiper-button-next,
+  .works-swiper .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+  }
+
+  .works-swiper .swiper-button-next::after,
+  .works-swiper .swiper-button-prev::after {
+    font-size: 16px;
+  }
+
+  .works-swiper .swiper-slide {
+    width: 90%;
+  }
+
+  /* スマホでは隣のスライド効果を無効化 */
+  .works-swiper .swiper-slide:not(.swiper-slide-active) .work-card {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ------------------------------
+   WORK MODAL（拡大画像モーダル）
+------------------------------ */
+.work-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.work-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.work-modal-content {
+  position: relative;
+  z-index: 1001;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-modal-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 48px;
+  cursor: pointer;
+  z-index: 1002;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.work-modal-close:hover {
+  transform: rotate(90deg);
+}
+
+.work-modal-swiper {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+}
+
+.work-modal-swiper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-modal-swiper .swiper-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.work-modal-info {
+  margin-top: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.work-modal-info h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.work-modal-info p {
+  font-size: 16px;
+  color: #cccccc;
+}
+
+.work-modal-swiper .swiper-button-next,
+.work-modal-swiper .swiper-button-prev {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.work-modal-swiper .swiper-button-next:hover,
+.work-modal-swiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.work-modal-swiper .swiper-button-next::after,
+.work-modal-swiper .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.work-modal-swiper .swiper-pagination-bullet {
+  background: #ffffff;
+  opacity: 0.5;
+}
+
+.work-modal-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .work-modal-content {
+    width: 95%;
+  }
+
+  .work-modal-close {
+    top: -40px;
+    font-size: 36px;
+  }
+
+  .work-modal-info h3 {
+    font-size: 20px;
+  }
+
+  .work-modal-info p {
+    font-size: 14px;
+  }
 }
 
 /* ------------------------------
@@ -320,7 +727,8 @@ body {
   }
 
   .strengths-grid,
-  .flow-grid {
+  .flow-grid,
+  .voices-grid {
     grid-template-columns: 1fr;
   }
 

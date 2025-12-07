@@ -9,6 +9,8 @@
     content="世田谷・目黒エリア専門の不動産売却サポート。適正価格の査定と売却戦略を、担当・山口一重がストレートにご提案します。"
   />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
   <!-- ヘッダー -->
@@ -50,10 +52,7 @@
             <a href="#strengths" class="btn btn-outline">特徴を見る</a>
           </div>
         </div>
-        <div class="hero-image">
-          <!-- hero画像は assets/img/hero.jpg に置く想定 -->
-          <img src="assets/img/hero.jpg" alt="世田谷エリアの住宅街イメージ" />
-        </div>
+        
       </div>
     </section>
 
@@ -62,7 +61,7 @@
       <div class="container about-inner">
         <div class="about-image">
           <!-- あなたの写真を置く想定：assets/img/agent.jpg -->
-          <img src="assets/img/agent.jpg" alt="不動産売却担当 山口和重" />
+          <img src="assets/img/agent.webp" alt="不動産売却担当 山口一重" />
         </div>
         <div class="about-text">
           <h2 class="section-title">担当者について</h2>
@@ -81,12 +80,69 @@
             ・可能な限りスピーディーにご報告・ご提案を行うこと<br />
             を徹底しています。
           </p>
-          <p>
-            「ここまで丁寧に説明してくれる担当者は珍しい」<br />
-            「話していて安心できる」<br />
-            といったお声を多くいただいています。
-          </p>
         </div>
+      </div>
+    </section>
+    <!-- お客様の声 -->
+    <section id="voices" class="section voices">
+      <div class="container">
+        <h2 class="section-title">お客様からいただいた声</h2>
+
+        <div class="voices-grid">
+
+          <!-- REVIEW 1 -->
+          <div class="voice-card">
+            <div class="voice-badge">
+              <span class="voice-badge-icon">💬</span>
+              <span class="voice-badge-text">Googleクチコミ</span>
+            </div>
+            <p class="voice-rating">★★★★★</p>
+            <p class="voice-text">
+              「東宝ハウスの山口さんはすごい人でした！あんまり教えたくないくらい。
+              でも住宅の買い替えがあったら是非相談をおすすめします。
+              とにかく正直かつ優秀な人です。」
+            </p>
+            <p class="voice-author">– Googleクチコミより</p>
+          </div>
+
+          <!-- REVIEW 2 -->
+          <div class="voice-card">
+            <div class="voice-badge">
+              <span class="voice-badge-icon">💬</span>
+              <span class="voice-badge-text">Googleクチコミ</span>
+            </div>
+            <p class="voice-rating">★★★★★</p>
+            <p class="voice-text">
+              「古家付き賃借人ありの土地を売却するにあたり、一年以上じっくり相談に乗っていただきました。
+              売主の立場で意見を聞きつつ妥当な判断を示してくれて、本当に感謝しています。」
+            </p>
+            <p class="voice-author">– Googleクチコミより</p>
+          </div>
+
+          <!-- REVIEW 3 -->
+          <div class="voice-card">
+            <div class="voice-badge">
+              <span class="voice-badge-icon">💬</span>
+              <span class="voice-badge-text">Googleクチコミ</span>
+            </div>
+            <p class="voice-rating">★★★★★</p>
+            <p class="voice-text">
+              「海外育ちの私には知識や書類が不足していましたが、担当の山口様が嫌な顔ひとつせず、
+              一つ一つ解決してくれました。購入後の火災保険などのサポートまでして頂きました。」
+            </p>
+            <p class="voice-author">– Googleクチコミより</p>
+          </div>
+
+        </div>
+
+        <p class="voices-link">
+          ※詳細は
+          <a href="https://www.google.com/search?q=%E6%9D%B1%E5%AE%9D%E3%83%8F%E3%82%A6%E3%82%B9%E4%B8%96%E7%94%B0%E8%B0%B7#mpd=~3461926499614323832/customers/reviews"
+            target="_blank" rel="noopener noreferrer">
+            Googleクチコミ
+          </a>
+          をご覧ください。
+        </p>
       </div>
     </section>
 
@@ -174,6 +230,128 @@
       </div>
     </section>
 
+    <section id="works" class="section works">
+      <div class="container">
+        <h2 class="section-title">過去に担当した物件の一部</h2>
+    
+        <div class="swiper works-swiper">
+          <div class="swiper-wrapper">
+    
+            <!-- 物件1 -->
+            <div class="swiper-slide">
+              <div class="work-card" data-work-index="0">
+                <img src="assets/img/work1.webp" alt="センチュリー千歳烏山レジデンス" />
+                <div class="work-content">
+                  <h3 class="work-title">センチュリー千歳烏山レジデンス</h3>
+                  <p class="work-meta">京王線・仙川 / マンション</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- 物件2 -->
+            <div class="swiper-slide">
+              <div class="work-card" data-work-index="1">
+                <img src="assets/img/work2.webp" alt="光建ハイムブリリアンス目黒" />
+                <div class="work-content">
+                  <h3 class="work-title">光建ハイム ブリリアンス目黒</h3>
+                  <p class="work-meta">東横線・学芸大学 / マンション</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- 物件3 -->
+            <div class="swiper-slide">
+              <div class="work-card" data-work-index="2">
+                <img src="assets/img/work3.webp" alt="南蒲田 戸建" />
+                <div class="work-content">
+                  <h3 class="work-title">南蒲田 2SDK 戸建</h3>
+                  <p class="work-meta">京急本線・糀谷 / 戸建</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- 物件4 -->
+            <div class="swiper-slide">
+              <div class="work-card" data-work-index="3">
+                <img src="assets/img/work4.webp" alt="プレミスト新小岩ルネ" />
+                <div class="work-content">
+                  <h3 class="work-title">プレミスト新小岩ルネ</h3>
+                  <p class="work-meta">JR新小岩 / マンション</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- 物件5 -->
+            <div class="swiper-slide">
+              <div class="work-card" data-work-index="4">
+                <img src="assets/img/work5.webp" alt="東六郷 売地" />
+                <div class="work-content">
+                  <h3 class="work-title">東六郷 売地 146㎡</h3>
+                  <p class="work-meta">京急本線・雑色 / 土地</p>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+          <!-- ナビゲーションボタン -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- ページネーション -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 拡大画像モーダル -->
+    <div id="workModal" class="work-modal">
+      <div class="work-modal-overlay"></div>
+      <div class="work-modal-content">
+        <button class="work-modal-close" aria-label="閉じる">&times;</button>
+        <div class="swiper work-modal-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="assets/img/work1.webp" alt="センチュリー千歳烏山レジデンス" />
+              <div class="work-modal-info">
+                <h3>センチュリー千歳烏山レジデンス</h3>
+                <p>京王線・仙川 / マンション</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/work2.webp" alt="光建ハイムブリリアンス目黒" />
+              <div class="work-modal-info">
+                <h3>光建ハイム ブリリアンス目黒</h3>
+                <p>東横線・学芸大学 / マンション</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/work3.webp" alt="南蒲田 戸建" />
+              <div class="work-modal-info">
+                <h3>南蒲田 2SDK 戸建</h3>
+                <p>京急本線・糀谷 / 戸建</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/work4.webp" alt="プレミスト新小岩ルネ" />
+              <div class="work-modal-info">
+                <h3>プレミスト新小岩ルネ</h3>
+                <p>JR新小岩 / マンション</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/work5.webp" alt="東六郷 売地" />
+              <div class="work-modal-info">
+                <h3>東六郷 売地 146㎡</h3>
+                <p>京急本線・雑色 / 土地</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- FAQ -->
     <section id="faq" class="section faq">
       <div class="container">
@@ -232,6 +410,8 @@
     </div>
   </footer>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
