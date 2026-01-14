@@ -144,4 +144,51 @@ document.addEventListener("DOMContentLoaded", () => {
       closePhoneModal();
     }
   });
+
+  // ハンバーガーメニューの処理
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const navLinks = document.querySelectorAll('.site-nav a');
+
+  // ハンバーガーメニューの開閉
+  if (mobileMenuToggle && siteNav) {
+    mobileMenuToggle.addEventListener('click', () => {
+      const isActive = siteNav.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+      mobileMenuToggle.setAttribute('aria-expanded', isActive);
+      document.body.style.overflow = isActive ? 'hidden' : '';
+    });
+
+    // メニュー内のリンクをクリックしたらメニューを閉じる
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        siteNav.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // オーバーレイクリックでメニューを閉じる（背景クリック）
+    document.addEventListener('click', (e) => {
+      if (siteNav.classList.contains('active') && 
+          !siteNav.contains(e.target) && 
+          !mobileMenuToggle.contains(e.target)) {
+        siteNav.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ESCキーでメニューを閉じる
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && siteNav.classList.contains('active')) {
+        siteNav.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 });
