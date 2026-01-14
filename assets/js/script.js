@@ -101,4 +101,47 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModal();
     }
   });
+
+  // 電話モーダルの処理
+  const phoneModal = document.getElementById('phoneModal');
+  const phoneModalOverlay = document.querySelector('.phone-modal-overlay');
+  const phoneModalCancel = document.querySelector('.phone-modal-cancel');
+  const phoneLinks = document.querySelectorAll('[data-phone-action]');
+
+  // 電話リンククリックでモーダルを開く
+  phoneLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      openPhoneModal();
+    });
+  });
+
+  // 電話モーダルを開く
+  function openPhoneModal() {
+    phoneModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // 電話モーダルを閉じる
+  function closePhoneModal() {
+    phoneModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // キャンセルボタン
+  if (phoneModalCancel) {
+    phoneModalCancel.addEventListener('click', closePhoneModal);
+  }
+
+  // オーバーレイクリックで閉じる
+  if (phoneModalOverlay) {
+    phoneModalOverlay.addEventListener('click', closePhoneModal);
+  }
+
+  // ESCキーで電話モーダルを閉じる
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && phoneModal.classList.contains('active')) {
+      closePhoneModal();
+    }
+  });
 });
