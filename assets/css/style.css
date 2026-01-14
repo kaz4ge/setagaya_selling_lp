@@ -689,6 +689,14 @@ body {
   font-size: 16px;
 }
 
+.final-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .final-cta .btn-primary {
   background: #fff;
   color: #00306d;
@@ -696,6 +704,122 @@ body {
 
 .final-cta .btn-primary:hover {
   background: #e6e6e6;
+}
+
+.btn-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.btn-phone-icon {
+  font-size: 20px;
+}
+
+.final-cta .btn-outline {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+}
+
+.final-cta .btn-outline:hover {
+  background: #ffffff;
+  color: #00306d;
+}
+
+/* ------------------------------
+   PHONE MODAL（電話確認モーダル）
+------------------------------ */
+.phone-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.phone-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.phone-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.phone-modal-content {
+  position: relative;
+  z-index: 2001;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.phone-modal-title {
+  font-size: 24px;
+  color: #00306d;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.phone-modal-text {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.phone-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.phone-modal-cancel {
+  min-width: 120px;
+}
+
+.phone-modal-call {
+  min-width: 120px;
+}
+
+@media (max-width: 800px) {
+  .phone-modal-content {
+    padding: 30px 20px;
+  }
+
+  .phone-modal-title {
+    font-size: 20px;
+  }
+
+  .phone-modal-text {
+    font-size: 15px;
+  }
+
+  .phone-modal-actions {
+    flex-direction: column;
+  }
+
+  .phone-modal-actions .btn {
+    width: 100%;
+  }
 }
 
 /* ------------------------------
@@ -734,5 +858,15 @@ body {
 
   .hero-actions {
     justify-content: center;
+  }
+
+  .final-cta-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .final-cta-actions .btn {
+    width: 100%;
+    max-width: 300px;
   }
 }

@@ -24,8 +24,9 @@
         <a href="#about">担当者について</a>
         <a href="#strengths">選ばれる理由</a>
         <a href="#flow">売却の流れ</a>
+        <a href="#works">過去の担当物件</a>
         <a href="#faq">よくある質問</a>
-        <a href="form/contact.html" class="nav-cta">無料査定</a>
+        <a href="https://forms.gle/yP34CtAUsKwsB4gL6" class="nav-cta" target="_blank" rel="noopener noreferrer">無料査定</a>
       </nav>
     </div>
   </header>
@@ -45,11 +46,14 @@
             適正価格の査定と売却戦略を、数字と根拠をもとにストレートにお伝えします。
           </p>
           <p class="hero-note">
-            最短10秒で査定依頼 → <span>当日中に初期調査レポート</span>をお送りします。
+            最短2分で査定依頼 → <span>当日中に初期調査レポート</span>をお送りします。
           </p>
           <div class="hero-actions">
-            <a href="form/contact.html" class="btn btn-primary">無料査定を依頼する</a>
-            <a href="#strengths" class="btn btn-outline">特徴を見る</a>
+            <a href="https://forms.gle/yP34CtAUsKwsB4gL6" class="btn btn-primary" target="_blank" rel="noopener noreferrer">無料査定を依頼する</a>
+            <a href="#" class="btn btn-outline btn-phone" data-phone-action>
+              <span class="btn-phone-icon">📞</span>
+              電話で問い合わせ
+            </a>
           </div>
         </div>
         
@@ -204,7 +208,7 @@
         <div class="flow-grid">
           <div class="flow-step">
             <div class="flow-number">STEP 1</div>
-            <h3>査定依頼（10秒で完了）</h3>
+            <h3>査定依頼（最短2分で完了）</h3>
             <p>
               物件の所在地・おおまかな広さ・築年数など、わかる範囲でご入力ください。<br />
               まだ売却を迷っている段階でも問題ありません。
@@ -395,9 +399,15 @@
           今の相場と「売れる価格」を、当日中に初期レポートとしてお送りします。<br />
           売却するかどうかは、その後ゆっくりご検討いただいて構いません。
         </p>
-        <a href="form/contact.html" class="btn btn-primary btn-lg">
-          無料査定を依頼する
-        </a>
+        <div class="final-cta-actions">
+          <a href="https://forms.gle/yP34CtAUsKwsB4gL6" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+            無料査定を依頼する
+          </a>
+          <a href="#" class="btn btn-outline btn-lg btn-phone" data-phone-action>
+            <span class="btn-phone-icon">📞</span>
+            電話で問い合わせ
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -406,10 +416,23 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-copy">
-        &copy; <span id="year"></span> Setagaya Selling / 山口一重. All rights reserved.
+        &copy; <span id="year"></span> 不動産売却サポート / 山口一重. All rights reserved.
       </p>
     </div>
   </footer>
+
+  <!-- 電話確認モーダル -->
+  <div id="phoneModal" class="phone-modal">
+    <div class="phone-modal-overlay"></div>
+    <div class="phone-modal-content">
+      <h3 class="phone-modal-title">東宝ハウス世田谷に電話します。</h3>
+      <p class="phone-modal-text">山口、もしくは浦野を指名してください。</p>
+      <div class="phone-modal-actions">
+        <button class="btn btn-outline phone-modal-cancel">キャンセル</button>
+        <a href="tel:0120-104-259" class="btn btn-primary phone-modal-call">電話をかける</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
